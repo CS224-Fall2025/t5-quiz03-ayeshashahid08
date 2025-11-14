@@ -16,7 +16,7 @@ Employee(string n, double s){
 }
 
 virtual void displayInfo(){
-    cout<<"Name: "<<name", "<<"Salary: "<<salary<<endl;
+    cout<<"Name: "<<name<<", "<<"Salary: "<<salary<<endl;
 }
 
 static void showTotalEmployees(){
@@ -31,14 +31,9 @@ class Staff: public Employee{
 private:
 string department;
 public:
-staff(string t, string n, double s){
-    title = t;
-    name = n;
-    salary =s;
-    employeeCount++;
-}
-displayInfo() override{
-    cout<<"Name: "<<name" (Staff), "<<"Salary: "<<salary<<endl;
+
+void displayInfo() override{
+    cout<<"Name: "<<name<<" (Staff), "<<"Salary: "<<salary<<endl;
 }
 };
 
@@ -46,14 +41,9 @@ class Faculty: public Employee{
 private:
 string department;
 public:
-Faculty(string t, string n, double s){
-    title = t;
-    name = n;
-    salary =s;
-    employeeCount++;
-}
+
 displayInfo() override{
-    cout<<"Name: "<<name" (Faculty), "<<"Salary: "<<salary<<endl;
+    cout<<"Name: "<<name<<" (Faculty), "<<"Salary: "<<salary<<endl;
 }
 };
 
@@ -70,19 +60,19 @@ for (int i = 0; i<n; i++){
     cin>>title>>name>>salaray;
     if (title == "Staff"){
         
-        objects[i] = new staff st(title, name, salary);
+        objects[i] = new staff st( name, salary);
     }
-    else if (title = "Faculty"{
-        objects[i] =new Faculty f(title, name, salary);
+    else if (title = "Faculty"){
+        objects[i] =new Faculty f( name, salary);
     })
 }
-for (int i = 0; i< n, i++){
+for (int i = 0; i< n; i++){
     *(objects[i]).displayInfo();
 }
 Employee::showTotalEmployees();
 
-for (int i = 0; i< n, i++){
-    delete objects[i] [];
+for (int i = 0; i< n; i++){
+    delete [] objects[i];
 }
 
 }
